@@ -43,7 +43,8 @@ export default function WeeklyView() {
         revenueByWeek: [],
         spendByWeek: [],
         impressionsByWeek: [],
-        clicksByWeek: []
+        clicksByWeek: [],
+        weeklyData: [] // Add this to fix the TypeScript error
       };
     }
 
@@ -259,7 +260,7 @@ export default function WeeklyView() {
               </div>
 
               {/* Performance Summary */}
-              {weeklyMetrics.weeklyData.length > 0 && (
+              {weeklyMetrics.weeklyData && weeklyMetrics.weeklyData.length > 0 && (
                 <div className="bg-gray-800 rounded-lg p-6 border border-gray-700">
                   <h3 className="text-lg font-semibold text-white mb-4">Recent Weekly Performance</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
